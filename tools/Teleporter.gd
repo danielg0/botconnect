@@ -16,8 +16,8 @@ func action():
 func _on_Teleporter_body_entered(body):
 	# Move the node to be a child of the player
 	if body.get_name() == "Player" && body.get_child_count() == 2:
-		get_parent().remove_child(self)
-		body.add_child(self)
+		get_parent().call_deferred("remove_child", self)
+		body.call_deferred("add_child", self)
 		
 		# Change the nodes position
 		self.position = Vector2(0, 0)
