@@ -23,3 +23,6 @@ func _on_Spring_body_entered(body):
 
 			# Change the nodes position
 			position = Vector2(0, 0)
+			
+			# Regen hud
+			get_parent().call_deferred("regenHud")

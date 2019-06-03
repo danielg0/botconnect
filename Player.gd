@@ -29,6 +29,7 @@ func switch():
 		move_child(get_child(tools), tools + 1)
 		get_child(tools).show()
 		get_child(tools + 1).hide()
+	get_parent().regenHud()
 
 func get_input():
 	velocity.x = 0
