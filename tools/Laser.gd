@@ -19,7 +19,7 @@ func _on_Laser_body_entered(body):
 	# Move the node to be a child of the player
 	if body.get_name() == "Player" && get_parent().get_name() != "Player":
 		var count = body.get_child_count()
-		if count == 3 || count == 4:
+		if count == 3 || (count == 4 && body.Two()):
 			pass
 			get_parent().call_deferred("remove_child", self)
 			body.call_deferred("add_child", self)

@@ -10,11 +10,8 @@ func regenHud():
 func nextLevel():
 	get_tree().change_scene("res://levels/Level" + str(level + 1) + ".tscn")
 
-# Restart the current level
-func restart():
-	get_tree().change_scene("res://levels/Level" + str(level) + ".tscn")
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_child(2).get_name() != "Player":
-		restart()
+		print("Game Over")
+		get_tree().quit()

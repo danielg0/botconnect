@@ -12,7 +12,9 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="Use" type="Sprite" parent="."]
+position = Vector2( -40, -16 )
 
 [node name="Held" type="Sprite" parent="."]
+position = Vector2( 40, -16 )
 
 [node name="Blank" type="Sprite" parent="."]

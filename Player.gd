@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export (int) var SPEED = 200
 export (int) var GRAVITY = 1000
+export (bool) var TWO = true
 
 var velocity = Vector2(1, 0)
 
@@ -21,8 +22,12 @@ func drop():
 			node.position = position + Vector2(35, 0)
 		else:
 			node.position = position + Vector2(-35, 0)
-	if get_child_count() > tools:
-		get_child(tools).show()
+		
+		# If there was an item being held
+		if get_child_count() > tools:
+			get_child(tools).show()
+		
+		get_parent().regenHud()
 
 func switch():
 	if get_child_count() > tools + 1:
@@ -38,6 +43,7 @@ func get_input():
 	var action = Input.is_action_just_pressed("ui_action")
 	var drop = Input.is_action_just_pressed("ui_drop")
 	var switch = Input.is_action_just_pressed("ui_switch")
+	var restart = Input.is_action_just_pressed("ui_restart")
 	
 	if right:
 		velocity.x += SPEED
@@ -49,6 +55,8 @@ func get_input():
 		drop()
 	if switch:
 		switch()
+	if restart:
+		get_parent().restart()
 	
 	if velocity.x < 0:
 		facingRight = false
@@ -73,6 +81,9 @@ func get_input():
 
 func FacingRight():
 	return facingRight
+
+func Two():
+	return TWO
 
 func _physics_process(delta):
 	get_input()
