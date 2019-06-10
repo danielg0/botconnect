@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://tools/Spring.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://media/spring.png" type="Texture" id=9]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource( 1 )
@@ -38,3 +40,38 @@ position = Vector2( 510, 510 )
 
 [node name="Goal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 928, 448 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 500.0
+margin_top = 60.0
+margin_right = 870.0
+margin_bottom = 210.0
+custom_fonts/normal_font = ExtResource( 8 )
+text = "To pick up an attachment, move over it
+To use an attachment, press Z or the Up Arrow
+
+Luckily for you, all attachments in this lab are compatible with your robot, reducing the chance of spontaneous explosion by over 65%"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 760.0
+margin_top = 490.0
+margin_right = 1130.0
+margin_bottom = 522.0
+custom_fonts/normal_font = ExtResource( 8 )
+text = "To restart a level, press R"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 140.0
+margin_top = 420.0
+margin_right = 400.0
+margin_bottom = 540.0
+rect_pivot_offset = Vector2( 19.8162, 113.419 )
+custom_fonts/normal_font = ExtResource( 8 )
+text = "The Spring
+
+- Provides vertical accelleration
+- Leading the fight against gravity since '09"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 262, 430 )
+texture = ExtResource( 9 )

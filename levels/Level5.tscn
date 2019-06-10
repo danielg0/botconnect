@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://tools/Teleporter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://font.tres" type="DynamicFont" id=10]
+[ext_resource path="res://media/portal.png" type="Texture" id=11]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource( 1 )
@@ -71,8 +73,36 @@ position = Vector2( 710, 550 )
 [node name="Teleporter" parent="." instance=ExtResource( 7 )]
 position = Vector2( 70, 180 )
 
+[node name="Teleporter2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 180, 350 )
+
 [node name="Portal" parent="." instance=ExtResource( 8 )]
 position = Vector2( 800, 224 )
 
 [node name="Goal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 928, 224 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 20.0
+margin_top = 340.0
+margin_right = 272.0
+margin_bottom = 470.0
+custom_fonts/normal_font = ExtResource( 10 )
+text = "The Teleporter
+
+- Moves you to the nearest portal
+- Almost certainly doesn't cause existential crises"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 350 )
+texture = ExtResource( 11 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 750.0
+margin_top = 340.0
+margin_right = 1002.0
+margin_bottom = 440.0
+custom_fonts/normal_font = ExtResource( 10 )
+text = "The Portal
+- Where you are moved to when using a teleporter
+- Took ages to make in GIMP"

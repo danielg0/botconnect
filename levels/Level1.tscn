@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://UI_item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://font.tres" type="DynamicFont" id=6]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -25,3 +26,31 @@ TWO = false
 
 [node name="Goal" parent="." instance=ExtResource( 5 )]
 position = Vector2( 320, 544 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 40.0
+margin_top = 150.0
+margin_right = 240.0
+margin_bottom = 540.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = "Welcome to Bot.Connect(), you're currently controlling this little green robot up here.
+It has the ability to connect parts to itself in order to gain new abilities, like jumping.
+
+However, it isn't completely useless on its own - it can move left and right and is almost completely affected by the laws of gravity."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 300.0
+margin_top = 550.0
+margin_right = 390.0
+margin_bottom = 626.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = "Get here to move to the next lab"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 378.0
+margin_top = 260.0
+margin_right = 608.0
+margin_bottom = 310.0
+custom_fonts/normal_font = ExtResource( 6 )
+text = "Right Arrow - Move Right
+Left Arrow - Move Left"

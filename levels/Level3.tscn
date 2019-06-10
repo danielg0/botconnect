@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://tools/Spring.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://font.tres" type="DynamicFont" id=9]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 1 )
@@ -51,3 +52,11 @@ velocity = Vector2( 100, 0 )
 
 [node name="Goal" parent="." instance=ExtResource( 8 )]
 position = Vector2( 928, 512 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 782.0
+margin_top = 180.0
+margin_right = 982.0
+margin_bottom = 280.0
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Those red squares are the Automated Robo-Zappers 5000. I'd avoid them if I were you."
